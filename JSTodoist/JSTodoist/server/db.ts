@@ -3,7 +3,7 @@ import postgres from 'postgres'
 export const sql = postgres({
     username: 'myuser',
     password: 'mypassword',
-    host: 'localhost',
+    host: process.env.POSTGRES_LOCALHOST as string,
     database: 'mydatabase',
-    port: 7777
+    port: Number.parseInt(process.env.POSTGRES_PORT!)
 })
